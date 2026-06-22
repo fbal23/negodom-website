@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Negodom — Capital & Counsel</title>
+<meta name="description" content="Negodom is a private investment holding paired with board-level advisory. We invest our own capital in companies, and we help leaders win the conversations that decide their outcome.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0d1b2a; --ink-2:#13263b; --ink-3:#1b3047;
+    --paper:#f7f5f0; --paper-2:#efece3;
+    --gold:#c2a25e; --gold-2:#d9bd84;
+    --muted:#9baabd; --muted-d:#5d6b7d;
+    --line:rgba(255,255,255,.10); --line-d:rgba(13,27,42,.12);
+    --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+    --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--ink);color:#e9edf3;line-height:1.65;font-weight:300;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.serif{font-family:var(--serif);font-weight:500;line-height:1.12;letter-spacing:.2px}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+  .eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500}
+
+  /* NAV */
+  header{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(10px);
+    background:rgba(13,27,42,.72);border-bottom:1px solid var(--line);transition:.3s}
+  nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{font-family:var(--serif);font-size:1.5rem;font-weight:600;letter-spacing:.5px}
+  .brand span{color:var(--gold)}
+  .nav-links{display:flex;gap:34px;align-items:center}
+  .nav-links a{font-size:.83rem;letter-spacing:.06em;color:var(--muted);transition:.2s}
+  .nav-links a:hover{color:#fff}
+  .nav-cta{border:1px solid var(--gold);color:var(--gold)!important;padding:9px 20px;border-radius:2px;font-size:.78rem!important;letter-spacing:.1em!important;text-transform:uppercase}
+  .nav-cta:hover{background:var(--gold);color:var(--ink)!important}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:0}
+  .burger span{width:24px;height:2px;background:#fff;transition:.3s}
+
+  /* HERO */
+  .hero{position:relative;padding:190px 0 120px;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;
+    background:radial-gradient(1100px 600px at 75% -5%,rgba(194,162,94,.16),transparent 60%),
+               radial-gradient(800px 500px at 10% 110%,rgba(27,48,71,.7),transparent 60%)}
+  .hero .wrap{position:relative}
+  .hero h1{font-size:clamp(2.6rem,6vw,4.7rem);max-width:14ch;margin:22px 0 26px}
+  .hero h1 em{font-style:italic;color:var(--gold-2)}
+  .hero p.lead{font-size:1.18rem;max-width:60ch;color:#c7d0dc;font-weight:300}
+  .hero-actions{display:flex;gap:16px;margin-top:40px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:14px 30px;border-radius:2px;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;transition:.25s;font-weight:500}
+  .btn-primary{background:var(--gold);color:var(--ink)}
+  .btn-primary:hover{background:var(--gold-2);transform:translateY(-2px)}
+  .btn-ghost{border:1px solid var(--line);color:#dfe5ee}
+  .btn-ghost:hover{border-color:var(--gold);color:#fff}
+
+  /* STATS BAR */
+  .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--ink-2)}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;padding:46px 28px}
+  .stat .n{font-family:var(--serif);font-size:2.5rem;color:#fff;line-height:1}
+  .stat .l{font-size:.78rem;letter-spacing:.08em;color:var(--muted);margin-top:10px;text-transform:uppercase}
+
+  /* SECTION SHELL */
+  section{padding:108px 0}
+  .sec-head{max-width:62ch;margin-bottom:60px}
+  .sec-head h2{font-size:clamp(2rem,4vw,3.1rem);margin:14px 0 18px}
+  .sec-head p{color:#c0c9d6;font-size:1.08rem}
+
+  /* PILLARS */
+  #pillars{background:var(--paper);color:var(--ink)}
+  #pillars .sec-head h2{color:var(--ink)}
+  #pillars .sec-head p{color:var(--muted-d)}
+  #pillars .eyebrow{color:#a7894a}
+  .pillars{display:grid;grid-template-columns:1fr 1fr;gap:34px}
+  .pillar{background:#fff;border:1px solid var(--line-d);border-radius:6px;padding:46px 42px;transition:.3s}
+  .pillar:hover{transform:translateY(-4px);box-shadow:0 24px 60px -30px rgba(13,27,42,.4)}
+  .pillar .tag{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:#a7894a;font-weight:600}
+  .pillar h3{font-size:2rem;margin:12px 0 16px;color:var(--ink)}
+  .pillar > p{color:#4a5666;margin-bottom:26px}
+  .pillar ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+  .pillar li{position:relative;padding-left:26px;color:#33414f;font-size:.97rem}
+  .pillar li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;background:var(--gold);transform:rotate(45deg)}
+
+  /* APPROACH */
+  #approach .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+  .principle{background:var(--ink);padding:44px 40px;transition:.3s}
+  .principle:hover{background:var(--ink-2)}
+  .principle .num{font-family:var(--serif);font-size:1.1rem;color:var(--gold);letter-spacing:.1em}
+  .principle h3{font-size:1.5rem;margin:14px 0 12px;color:#fff}
+  .principle p{color:var(--muted);font-size:.97rem}
+
+  /* BOARD INTELLIGENCE FEATURE */
+  #intel{background:linear-gradient(180deg,var(--ink-3),var(--ink-2))}
+  .feature{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+  .feature .copy h2{font-size:clamp(1.9rem,3.5vw,2.7rem);margin:14px 0 18px}
+  .feature .copy p{color:#c4cdda;margin-bottom:18px}
+  .feature .copy .mini{display:flex;gap:30px;margin-top:30px;flex-wrap:wrap}
+  .mini div .k{font-family:var(--serif);font-size:1.7rem;color:var(--gold-2)}
+  .mini div .v{font-size:.8rem;color:var(--muted);letter-spacing:.05em}
+  .panel{background:#0a141f;border:1px solid var(--line);border-radius:10px;padding:30px;font-family:var(--sans)}
+  .panel .row{display:flex;align-items:center;justify-content:space-between;padding:15px 0;border-bottom:1px solid var(--line);font-size:.88rem}
+  .panel .row:last-child{border-bottom:0}
+  .panel .row .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:12px}
+  .panel .label{color:#cdd6e2}
+  .panel .meta{color:var(--muted);font-size:.78rem}
+  .pill{font-size:.7rem;letter-spacing:.05em;padding:4px 12px;border-radius:20px;text-transform:uppercase}
+
+  /* CONTACT */
+  #contact{background:var(--paper);color:var(--ink)}
+  #contact .eyebrow{color:#a7894a}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+  #contact h2{font-size:clamp(2rem,4vw,3rem);color:var(--ink);margin:14px 0 20px}
+  #contact .lead{color:#4a5666;font-size:1.08rem;max-width:46ch}
+  .contact-card{background:#fff;border:1px solid var(--line-d);border-radius:6px;padding:38px}
+  .contact-card .item{padding:16px 0;border-bottom:1px solid var(--line-d)}
+  .contact-card .item:last-child{border:0}
+  .contact-card .k{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#a7894a;margin-bottom:5px}
+  .contact-card .v{color:var(--ink);font-size:1.02rem}
+  .contact-card .v a{border-bottom:1px solid var(--gold)}
+  .btn-dark{background:var(--ink);color:#fff;margin-top:8px}
+  .btn-dark:hover{background:var(--ink-3)}
+
+  /* FOOTER */
+  footer{background:var(--ink);border-top:1px solid var(--line);padding:54px 0 40px}
+  .foot{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px}
+  .foot .brand{font-size:1.3rem}
+  .foot .legal{color:var(--muted-d);font-size:.8rem;line-height:1.9}
+  .foot .legal strong{color:var(--muted)}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:860px){
+    .nav-links{position:fixed;inset:74px 0 auto 0;background:var(--ink-2);flex-direction:column;gap:0;
+      padding:10px 0;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:.35s;height:auto}
+    .nav-links.open{transform:none}
+    .nav-links a{padding:16px 28px;width:100%}
+    .burger{display:flex}
+    .stats .wrap{grid-template-columns:1fr 1fr;gap:34px 20px}
+    .pillars,.feature,#approach .grid,.contact-grid{grid-template-columns:1fr}
+    .feature .panel{order:-1}
+    section{padding:74px 0}
+    .hero{padding:140px 0 80px}
+  }
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap">
+    <nav>
+      <a href="#top" class="brand">Nego<span>dom</span></a>
+      <div class="nav-links" id="navlinks">
+        <a href="#pillars">What we do</a>
+        <a href="#approach">Approach</a>
+        <a href="#intel">Board-Intelligence</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <p class="eyebrow reveal">Negodom Kft. · Budapest</p>
+    <h1 class="reveal">Capital, and the <em>counsel</em> to deploy it well.</h1>
+    <p class="lead reveal">Negodom is a private investment holding paired with board-level advisory. We invest our own capital in companies as active, patient owners — and we help leaders win the high-stakes conversations that decide their outcome.</p>
+    <div class="hero-actions reveal">
+      <a href="#pillars" class="btn btn-primary">What we do</a>
+      <a href="#contact" class="btn btn-ghost">Start a conversation</a>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stat reveal"><div class="n">30+</div><div class="l">Years at the table</div></div>
+    <div class="stat reveal"><div class="n">Own</div><div class="l">Balance-sheet investor</div></div>
+    <div class="stat reveal"><div class="n">Board</div><div class="l">Level mandates</div></div>
+    <div class="stat reveal"><div class="n">EU</div><div class="l">Focus, Budapest base</div></div>
+  </div>
+</div>
+
+<!-- PILLARS -->
+<section id="pillars">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Two disciplines, one firm</p>
+      <h2>We put capital to work, and we sharpen the decisions around it.</h2>
+      <p>Most investors are passive. Most advisors have no skin in the game. Negodom is built the other way around — we own what we back, and we bring the negotiation craft that protects and compounds it.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <div class="tag">01 — Negodom Capital</div>
+        <h3>Active investing, our own balance sheet</h3>
+        <p>We take selective positions in companies and securities using our own capital — never third-party funds. We behave like an owner, not a spectator.</p>
+        <ul>
+          <li>Own-capital positions: equity stakes &amp; convertible instruments</li>
+          <li>Active ownership — governance, strategy and deal-making value-add</li>
+          <li>Patient horizon; conviction over churn</li>
+          <li>Focus: technology, energy &amp; water, professional services</li>
+        </ul>
+      </div>
+      <div class="pillar reveal">
+        <div class="tag">02 — Negodom Advisory</div>
+        <h3>Board &amp; negotiation counsel</h3>
+        <p>Three decades at the negotiation table, distilled into counsel for boards and executives facing their most consequential moments.</p>
+        <ul>
+          <li>Executive &amp; board advisory, retained or by mandate</li>
+          <li>High-stakes negotiation strategy and preparation</li>
+          <li>Governance and stakeholder/coalition mapping</li>
+          <li>Board-Intelligence — decision support across multiple boards</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section id="approach">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">How we work</p>
+      <h2>Four principles that don't bend.</h2>
+    </div>
+    <div class="grid">
+      <div class="principle reveal"><div class="num">I</div><h3>Skin in the game</h3><p>We advise from the same seat we invest from. When we back a company or a board, our own capital and reputation are on the line — so our counsel is never academic.</p></div>
+      <div class="principle reveal"><div class="num">II</div><h3>Negotiation is the core craft</h3><p>Every valuation, every board vote, every partnership is a negotiation. We treat it as a discipline — built on the Harvard framework and thirty years of practice.</p></div>
+      <div class="principle reveal"><div class="num">III</div><h3>Board-grade rigour</h3><p>Decisions are structured, evidence is mapped, stakeholders are read. We bring the same intelligence to a portfolio company that a chair brings to a boardroom.</p></div>
+      <div class="principle reveal"><div class="num">IV</div><h3>Discretion by default</h3><p>The work is confidential, the relationships are long, and the names stay private. Trust is the asset that compounds fastest.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOARD INTELLIGENCE -->
+<section id="intel">
+  <div class="wrap">
+    <div class="feature">
+      <div class="copy reveal">
+        <p class="eyebrow">The Negodom tool — MyBoards</p>
+        <h2>Decision intelligence for people who sit on many boards.</h2>
+        <p>Serving three to eight boards means holding more context than any one mind can track. Board-Intelligence ingests board packs, news and your own notes, then surfaces what matters: cross-board patterns, commitment tracking, coalition maps and preparation briefs.</p>
+        <p>It is how our advisory scales — and a capability we extend to a select group of directors and executives.</p>
+        <div class="mini">
+          <div><div class="k">3–8</div><div class="v">Boards, one view</div></div>
+          <div><div class="k">AI</div><div class="v">+ human judgement</div></div>
+          <div><div class="k">Prep</div><div class="v">Briefs before every meeting</div></div>
+        </div>
+      </div>
+      <div class="panel reveal" aria-hidden="true">
+        <div class="row"><span class="label"><span class="dot" style="background:#5fb37a"></span>Board pack — Q3 reviewed</span><span class="pill" style="background:rgba(95,179,122,.15);color:#7fce97">Ready</span></div>
+        <div class="row"><span class="label"><span class="dot" style="background:var(--gold)"></span>Open commitments tracked</span><span class="meta">7 across 4 boards</span></div>
+        <div class="row"><span class="label"><span class="dot" style="background:#6aa9e0"></span>Coalition map — vote forecast</span><span class="meta">updated</span></div>
+        <div class="row"><span class="label"><span class="dot" style="background:#e0a96a"></span>Risk flag — covenant drift</span><span class="pill" style="background:rgba(224,169,106,.15);color:#e8bd84">Review</span></div>
+        <div class="row"><span class="label"><span class="dot" style="background:#9b8ce0"></span>Negotiation brief — partner renewal</span><span class="meta">drafted</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="reveal">
+        <p class="eyebrow">Contact</p>
+        <h2>Let's talk about what's at stake.</h2>
+        <p class="lead">Whether you are weighing an investment, preparing for a defining negotiation, or want sharper intelligence across your board portfolio — start with a conversation.</p>
+        <a href="mailto:info@negodom.hu?subject=Negodom%20enquiry" class="btn btn-dark">Email us</a>
+      </div>
+      <div class="contact-card reveal">
+        <div class="item"><div class="k">Email</div><div class="v"><a href="mailto:info@negodom.hu">info@negodom.hu</a></div></div>
+        <div class="item"><div class="k">Office</div><div class="v">Budapest, Hungary</div></div>
+        <div class="item"><div class="k">Entity</div><div class="v">Negodom Kft. · Adószám 23372492-2-43</div></div>
+        <div class="item"><div class="k">Focus</div><div class="v">Private investment &amp; board advisory · European mandates</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <a href="#top" class="brand">Nego<span style="color:var(--gold)">dom</span></a>
+      <p class="legal" style="margin-top:10px">Capital &amp; counsel for high-stakes decisions.</p>
+    </div>
+    <div class="legal">
+      <strong>Negodom Korlátolt Felelősségű Társaság</strong><br>
+      1118 Budapest, Ménesi út 63–65. · Adószám: 23372492-2-43<br>
+      © 2026 Negodom Kft. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile nav
+  const burger=document.getElementById('burger'),links=document.getElementById('navlinks');
+  burger.addEventListener('click',()=>links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+  // scroll reveal
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.14});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4*60)+'ms';io.observe(el)});
+</script>
+</body>
+</html>
