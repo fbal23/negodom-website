@@ -91,6 +91,15 @@
   .principle h3{font-size:1.5rem;margin:14px 0 12px;color:#fff}
   .principle p{color:var(--muted);font-size:.97rem}
 
+  /* SERVICES */
+  #services{background:var(--ink-2);border-top:1px solid var(--line)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+  .svc{background:var(--ink);padding:38px 32px;transition:.3s}
+  .svc:hover{background:var(--ink-3)}
+  .svc .ic{font-family:var(--serif);font-size:1.1rem;color:var(--gold);letter-spacing:.1em}
+  .svc h3{font-size:1.35rem;color:#fff;margin:12px 0 10px}
+  .svc p{color:var(--muted);font-size:.93rem}
+
   /* BOARD INTELLIGENCE FEATURE */
   #intel{background:linear-gradient(180deg,var(--ink-3),var(--ink-2))}
   .feature{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
@@ -139,7 +148,7 @@
     .nav-links a{padding:16px 28px;width:100%}
     .burger{display:flex}
     .stats .wrap{grid-template-columns:1fr 1fr;gap:34px 20px}
-    .pillars,.feature,#approach .grid,.contact-grid{grid-template-columns:1fr}
+    .pillars,.feature,#approach .grid,.contact-grid,.svc-grid{grid-template-columns:1fr}
     .feature .panel{order:-1}
     section{padding:74px 0}
     .hero{padding:140px 0 80px}
@@ -154,6 +163,7 @@
       <a href="#top" class="brand">Nego<span>dom</span></a>
       <div class="nav-links" id="navlinks">
         <a href="#pillars">What we do</a>
+        <a href="#services">Services</a>
         <a href="#approach">Approach</a>
         <a href="#intel">Board-Intelligence</a>
         <a href="#contact" class="nav-cta">Contact</a>
@@ -211,12 +221,32 @@
         <h3>Board &amp; negotiation counsel</h3>
         <p>Three decades at the negotiation table, distilled into counsel for boards and executives facing their most consequential moments.</p>
         <ul>
-          <li>Executive &amp; board advisory, retained or by mandate</li>
-          <li>High-stakes negotiation strategy and preparation</li>
-          <li>Governance and stakeholder/coalition mapping</li>
-          <li>Board-Intelligence — decision support across multiple boards</li>
+          <li>Negotiation training — corporate workshops &amp; simulations</li>
+          <li>Executive coaching for C-suite leaders and directors</li>
+          <li>Gestalt OD — organisation development &amp; change</li>
+          <li>Board, strategy &amp; high-stakes negotiation counsel</li>
+          <li>Board-Intelligence — decision support across boards</li>
         </ul>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Negodom Advisory</p>
+      <h2>What the advisory delivers.</h2>
+      <p>Five practice lines, one practitioner's craft — three decades of negotiation, executive-development and organisation-development experience, delivered in the training room and the boardroom.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal"><div class="ic">01</div><h3>Negotiation Training</h3><p>Corporate workshops and live simulations built on the Harvard framework — teams that leave negotiating measurably better.</p></div>
+      <div class="svc reveal"><div class="ic">02</div><h3>Executive Coaching</h3><p>One-to-one coaching for C-suite leaders and board members — clarity, presence and judgement under pressure.</p></div>
+      <div class="svc reveal"><div class="ic">03</div><h3>Gestalt OD</h3><p>Gestalt-based organisation development and change — awareness, choice and capacity built across teams and leadership.</p></div>
+      <div class="svc reveal"><div class="ic">04</div><h3>Board &amp; Strategy Advisory</h3><p>Retained and mandate counsel on governance, strategy, and the stakeholder dynamics that decide the vote.</p></div>
+      <div class="svc reveal"><div class="ic">05</div><h3>High-Stakes Negotiation</h3><p>Hands-on preparation and strategy for the deals, partnerships and transitions that cannot be lost.</p></div>
+      <div class="svc reveal"><div class="ic">06</div><h3>Board-Intelligence</h3><p>Decision intelligence across three to eight boards — patterns, commitments and briefs, powered by MyBoards.</p></div>
     </div>
   </div>
 </section>
